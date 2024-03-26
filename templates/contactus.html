@@ -1,0 +1,24 @@
+<head>
+{%include "bootstrap.html"%}
+</head>
+<body>
+  {%include "banner.html"%}
+<h4> Send me Message </h4>
+<form action="/message_submitted" method="post">
+<div class = "mb-2">
+<label>Full name</label><br>
+<input type = "text" name= "full_name" placeholder="HAMOUD ALQAHTANI"
+</div>
+
+  <div class = "mb-2">
+  <label>Email</label><br>
+  <input type = "text" name= "email" placeholder="HAMOUDALQAHTANI@gxyz.com"
+  </div>
+
+  <div>
+    <label>Message</label><br>
+    <textarea type = "text" name= "message"></textarea>
+  </div>
+  <input type ="submit">
+</form>
+</body>
