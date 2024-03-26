@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from database import load_projects_from_db, load_project_from_db
+from database import load_projects_from_db, load_project_from_db,add_message_to_db
 
 app = Flask(__name__)
 
@@ -21,8 +21,9 @@ def message():
 
 @app.route("/message_submitted", methods=["POST"])
 def message_submitted():
-  mdata = request.form
-  return render_template("message_submitted.html", data=mdata)
+  data = request.form
+  add_message_to_db(data)
+  return render_template("message_submitted.html", data=data)
 
 
 
